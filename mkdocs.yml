@@ -1,0 +1,18 @@
+site_name: gemini-core
+theme:
+  name: material
+  features:
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+
+nav:
+  - Home: index.md
+  - API Reference:
+      - Gemini Client: reference/gemini.md
+      - Configuration: reference/config.md
