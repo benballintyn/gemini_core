@@ -1,6 +1,13 @@
 # gemini_core
 
+[![Documentation](https://img.shields.io/badge/docs-github%20pages-blue)](https://benballintyn.github.io/gemini_core/)
+
 A robust, feature-rich, and easy-to-use Python wrapper for the Google GenAI SDK (`google-genai`). This package simplifies interaction with Gemini models, providing a unified interface for synchronous, asynchronous, and streaming generation, along with advanced features like multimodal inputs, function calling, and thought signatures (Gemini 3).
+
+## Documentation
+
+📚 **[View Full Documentation](https://benballintyn.github.io/gemini_core/)**
+
 
 ## Installation
 
