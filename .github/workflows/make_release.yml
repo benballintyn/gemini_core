@@ -13,6 +13,9 @@ on:
         required: true
         default: 'v0.1.0'
 
+permissions:
+  contents: write  # Required to create releases and tags
+
 jobs:
   release:
     runs-on: ubuntu-latest
