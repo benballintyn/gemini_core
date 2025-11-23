@@ -35,6 +35,12 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
+      - name: Configure Git for private repos
+        run: |
+          git config --global url."https://${{ secrets.COGITO_PAT }}@github.com/".insteadOf "https://github.com/"
+        env:
+          COGITO_PAT: ${{ secrets.COGITO_PAT }}
+
       - name: Cache Poetry dependencies
         uses: actions/cache@v4
         with:
@@ -48,7 +54,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          poetry install --no-interaction --with dev
+          poetry install --no-interaction --with dev,ci
 
       - name: Run Pytest
         run: |

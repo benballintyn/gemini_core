@@ -16,8 +16,12 @@ dependencies = [
 ]
 
 [tool.poetry.group.local.dependencies]
-# This tells Poetry: "When installing this project, link to this folder"
+# Local development - uses local path
 cogito = { path = "../cogito", develop = true }
+
+[tool.poetry.group.ci.dependencies]
+# CI environment - uses GitHub repo
+cogito = { git = "https://github.com/benballintyn/cogito.git", branch = "main" }
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.23.0"
