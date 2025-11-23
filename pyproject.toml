@@ -15,13 +15,11 @@ dependencies = [
     "pandas>=2.3.3,<3.0.0"
 ]
 
-[tool.poetry.group.local.dependencies]
-# Local development - uses local path
-cogito = { path = "../cogito", develop = true }
-
+# Note: For local development, install cogito separately:
+#   cd ../cogito && poetry install
+# In CI, cogito is installed from the GitHub repo
 [tool.poetry.group.ci.dependencies]
-# CI environment - uses GitHub repo
-cogito = { git = "https://github.com/benballintyn/cogito.git", branch = "main" }
+cogito = { git = "ssh://git@github.com/benballintyn/cogito.git", branch = "main" }
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.23.0"

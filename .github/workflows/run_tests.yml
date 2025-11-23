@@ -35,11 +35,10 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: Configure Git for private repos
-        run: |
-          git config --global url."https://${{ secrets.COGITO_PAT }}@github.com/".insteadOf "https://github.com/"
-        env:
-          COGITO_PAT: ${{ secrets.COGITO_PAT }}
+      - name: Setup SSH for private repos
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.COGITO_SSH_KEY }}
 
       - name: Cache Poetry dependencies
         uses: actions/cache@v4
