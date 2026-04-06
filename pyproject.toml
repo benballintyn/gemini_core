@@ -15,11 +15,8 @@ dependencies = [
     "pandas>=2.3.3,<3.0.0"
 ]
 
-# Note: For local development, install cogito separately:
-#   cd ../cogito && poetry install
-# In CI, cogito is installed from the GitHub repo
-[tool.poetry.group.ci.dependencies]
-cogito = { git = "ssh://git@github.com/benballintyn/cogito.git", branch = "main" }
+[tool.poetry.dependencies]
+cogito = { git = "https://github.com/benballintyn/cogito.git", branch = "main" }
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.23.0"
