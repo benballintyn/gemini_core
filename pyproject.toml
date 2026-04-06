@@ -13,7 +13,6 @@ dependencies = [
     "loguru>=0.7.3",
     "python-dotenv>=1.0.1,<2.0.0",
     "pandas>=2.3.3,<3.0.0",
-    "cogito",
 ]
 
 [tool.poetry.dependencies]
